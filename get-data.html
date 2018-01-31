@@ -1,0 +1,53 @@
+<link rel="import" href="../bower_components/polymerfire/firebase-document.html">
+
+<dom-module id="get-data">
+    <template>
+        <firebase-document
+                id="getData"
+                app-name="wa-scoore"
+                path="/[[path]]/[[key]]"c>
+        </firebase-document>
+    </template>
+
+    <script>
+        class GetData extends Polymer.Element {
+            static get is() { return 'get-data'; }
+            static get properties() {
+                return {
+                    name: {
+                        type: String,
+                        value: "name"
+                    },
+                    path: {
+                        Type: String
+                    },
+                    key: {
+                        Type: String
+                    },
+                    data: {
+                        Type: Object,
+                        notify: true
+                    }
+                }
+            }
+            static get observers() {
+                return [
+                    '_getStoredValue(path, key, name)'
+                ]
+            }
+            _getStoredValue(path, key, name){
+                if(typeof path != 'undefined' && path.length
+                && typeof key != 'undefined' && key.length){
+                    var scope = this;
+                    this.$.getData.getStoredValue('/'+path+'/'+key).then(function(object){
+                        scope.data = object[name];
+                    });
+                }else{
+                    this.data = '';
+                }
+            }
+        }
+
+        window.customElements.define(GetData.is, GetData);
+    </script>
+</dom-module>

@@ -1,0 +1,21 @@
+{
+	"name": "wa-firebase-data",
+	"version": "0.1.2",
+	"authors": [
+		"ju4nit0 (White App)"
+	],
+	"keywords": [
+		"firebase",
+		"data"
+	],
+	"description": "get firebase data from path and key",
+	"main": "wa-firebase-data.html",
+	"repository": {
+		"type": "git",
+		"url": "git://github.com/ju4nit0/wa-firebase-data.git"
+	},
+	"license": "MIT",
+	"homepage": "https://github.com/ju4nit0/wa-firebase-data",
+	"private": false,
+	"ignore": []
+}
