@@ -1,6 +1,7 @@
+<link rel="import" href="../polymer/polymer-element.html">
 <link rel="import" href="../bower_components/polymerfire/firebase-document.html">
 
-<dom-module id="get-data">
+<dom-module id="wa-firebase-data">
     <template>
         <firebase-document
                 id="getData"
@@ -10,8 +11,8 @@
     </template>
 
     <script>
-        class GetData extends Polymer.Element {
-            static get is() { return 'get-data'; }
+        class WaFirebaseData extends Polymer.Element {
+            static get is() { return 'wa-firebase-data'; }
             static get properties() {
                 return {
                     name: {
@@ -48,6 +49,6 @@
             }
         }
 
-        window.customElements.define(GetData.is, GetData);
+        window.customElements.define(WaFirebaseData.is, WaFirebaseData);
     </script>
 </dom-module>
